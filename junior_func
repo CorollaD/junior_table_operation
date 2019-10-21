@@ -1,0 +1,13 @@
+SELECT AVG(sal+IFNULL(comm,0)) as avg
+FROM t_emp;
+
+SELECT SUM(sal),MAX(sal+IFNULL(comm,0))
+FROM t_emp WHERE deptno IN(10,20);
+
+SELECT MAX(LENGTH(ename)) FROM t_emp;
+SELECT MIN(empno) FROM t_emp;
+SELECT MIN(hiredate) FROM t_emp;
+
+SELECT COUNT(*),COUNT(comm) FROM t_emp;
+SELECT COUNT(*) FROM t_emp 
+WHERE deptno IN(10,20) AND sal>=2000 AND DATEDIFF(NOW(),hiredate)/365>=15;
